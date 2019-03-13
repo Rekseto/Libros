@@ -1,0 +1,27 @@
+.loansTable {
+  margin-top: 35px;
+  width: 60%;
+}
+
+.loansTable__headCell {
+  background: #a61c00;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.loansTable__cell {
+  text-align: center;
+  padding: 15px 10px 15px 10px;
+  font-size: 1em;
+}
+.usersTable__bodyCell {
+  font-weight: 400;
+}
+
+.bookList__more {
+  background: #ffffff;
+}
+
+.usersTable__table tbody tr:nth-child(odd) {
+  background: #eee;
+}

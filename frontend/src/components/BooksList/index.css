@@ -1,0 +1,27 @@
+.booksList__table {
+  margin-top: 35px;
+  width: 100%;
+}
+
+.booksList__headCell {
+  background: #a61c00;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.booksList__cell {
+  text-align: center;
+  padding: 1em 0.6em 1em 0.6em;
+  font-size: 1em;
+}
+.booksList__bodyCell {
+  font-weight: 400;
+}
+
+.bookList__more {
+  background: #ffffff;
+}
+
+.booksList__table tbody tr:nth-child(odd) {
+  background: #eee;
+}

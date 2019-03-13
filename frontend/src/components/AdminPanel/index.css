@@ -1,0 +1,19 @@
+.adminPanel__button {
+  border: 0;
+  background: #991313;
+  color: white;
+  height: fit-content;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 4px;
+}
+
+.adminPanel__list {
+  width: 100%;
+}
+
+.adminPanel__button:hover {
+  background: #a51919;
+  color: white;
+  text-decoration: none;
+}

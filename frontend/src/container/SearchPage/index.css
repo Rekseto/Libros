@@ -1,0 +1,47 @@
+.searchPage {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.searchPage {
+  margin-top: 65px;
+}
+
+.searchPage__heading {
+  text-align: center;
+  margin: 15px;
+  font-size: 2.8em;
+}
+
+.searchPage__inputGroup {
+  display: flex;
+  flex-grow: 3;
+  margin: 10px;
+  align-items: center;
+}
+
+.searchPage__textInput {
+  width: 100%;
+}
+.searchPage__label {
+  margin: 0;
+  margin-right: 10px;
+  width: fit-content;
+}
+.searchPage__input {
+  width: 100%;
+}
+
+.searchPage__submit {
+  border: 0;
+  background: #991313;
+  color: white;
+  height: fit-content;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 4px;
+}
+.searchPage__booksList {
+  margin-top: 35px;
+  margin-bottom: 150px;
+}

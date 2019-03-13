@@ -1,0 +1,24 @@
+.addPublisherPage__section {
+  width: 100%;
+  padding: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addPublisherForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.addPublisherPage__list {
+  list-style-type: none;
+  margin-top: 60px;
+}
+.addPublisherPage__publisher {
+  display: grid;
+  grid-template-columns: 80% auto;
+  align-items: center;
+}
