@@ -6,5 +6,10 @@ RUN npm install --global --unsafe-perm serve
 # Copy app source code
 COPY ./build .
 
-#Expose port and start application
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
+
+## Launch the wait tool and then your application
+CMD /wait
+
 EXPOSE 80

@@ -25,9 +25,11 @@ services:
     build: ./frontend/
     tty: true
     command: ["serve", "./", "-l", "80"]
+    environment:
+      WAIT_HOSTS: backend:3000
     ports:
       - "80:80"
     depends_on:
-      - backend
+      - mongo
     links:
       - backend
