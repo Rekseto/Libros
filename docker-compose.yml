@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  mongo:
+    restart: always
+    image: mongo
+    volumes:
+      - /data_storages/libros
+    ports:
+      - "27017:27017"
+  backend:
+    build: ./backend/
+    tty: true
+    env_file:
+      - ./backend/.env
+    environment:
+      WAIT_HOSTS: mongo:27017
+    command: ["npm", "run", "docker:dev"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    links:
+      - mongo
+  frontend:
+    build: ./frontend/
+    tty: true
+    command: ["serve", "./", "-l", "80"]
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    links:
+      - backend
