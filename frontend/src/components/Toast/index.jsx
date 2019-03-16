@@ -47,7 +47,9 @@ class Toast extends React.Component {
       this.deley();
       return (
         <div className="notification">
-          {this.context.t(`ERROR_${error.errorCode}`)}
+          <i18nContext.Consumer>
+            {i18n => i18n.t(`ERROR_${error.errorCode}`)}
+          </i18nContext.Consumer>
         </div>
       );
     } else {

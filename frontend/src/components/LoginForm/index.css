@@ -25,8 +25,8 @@
 
 .loginPage__textInput {
   width: 100%;
-  border-radius: 2px;
-  border: 0;
+  border-radius: 4px;
+  border: 5px solid #f5f5f5;
   padding: 5px;
   background: white !important;
 }
@@ -36,8 +36,9 @@
 
 .loginPage__submit {
   border: 0;
-  border-radius: 2px;
-  padding: 3px;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 8px;
   background: white;
   color: black;
 }

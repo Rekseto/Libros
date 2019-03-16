@@ -10,17 +10,17 @@ import registerServiceWorker from "./workers/ServiceWorker";
 import "./index.css";
 import {HashRouter} from "react-router-dom";
 import {i18nContext} from "./i18n/i18nContext";
+import i18n from "./i18n";
 
 const store = configureStore();
-const i18nProvider = i18nContext.Provider;
-
+const I18nProvider = i18nContext.Provider;
 ReactDOM.render(
   <Provider store={store}>
-    <i18nProvider>
+    <I18nProvider value={new i18n("PL")}>
       <HashRouter>
         <App />
       </HashRouter>
-    </i18nProvider>
+    </I18nProvider>
   </Provider>,
   document.getElementById("root")
 );
