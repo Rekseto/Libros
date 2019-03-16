@@ -1,5 +1,5 @@
 class InternalServerError extends Error {
-  errorCode = 100;
+  errorCode = 101;
   httpStatus = 500;
   userMessage = "Internal Server Error";
 }

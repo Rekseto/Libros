@@ -1,5 +1,5 @@
 class NotFound extends Error {
-  errorCode = 101;
+  errorCode = 100;
   httpStatus = 404;
   userMessage = "Resource not found";
 }

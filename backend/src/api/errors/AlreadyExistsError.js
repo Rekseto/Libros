@@ -1,5 +1,5 @@
 class AlreadyExistsError extends Error {
-  errorCode = 110;
+  errorCode = 102;
   httpStatus = 409;
   userMessage = "Resource already exists";
 }

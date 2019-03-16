@@ -1,5 +1,5 @@
 class AuthWrongCredentialsError extends Error {
-  errorCode = 105;
+  errorCode = 103;
   httpStatus = 401;
   userMessage = "Wrong credentials";
 }
