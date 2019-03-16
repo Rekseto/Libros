@@ -39,7 +39,7 @@ export default function configureStore() {
 
   middlewares.push(sagaMiddleware);
   middlewares.push(createLogger({level: "info", collapsed: true}));
-  console.log(reducers);
+
   const rootReducer = combineReducers({...reducers, routing: routerReducer});
 
   const enhancer = composeEnhancers(applyMiddleware(...middlewares));
