@@ -1,11 +1,15 @@
 import * as React from "react";
 
 import "./index.css";
+import {i18nContext} from "../../i18n/i18nContext";
 
 class Toast extends React.Component {
   state = {
     show: false
   };
+
+  static contextType = i18nContext;
+
   componentDidMount() {
     const {error} = this.props;
     if (error) {
@@ -35,14 +39,17 @@ class Toast extends React.Component {
   };
 
   deley() {
-    window.setTimeout(this.hide, 2000);
+    window.setTimeout(this.hide, 8000);
   }
-
   render() {
     const {error} = this.props;
     if (this.state.show) {
       this.deley();
-      return <div className="notification">{error.userMessage}</div>;
+      return (
+        <div className="notification">
+          {this.context.t(`ERROR_${error.errorCode}`)}
+        </div>
+      );
     } else {
       return null;
     }
