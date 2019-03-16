@@ -22,7 +22,7 @@ services:
     links:
       - mongo
   frontend:
-    build: ./frontend/
+    build: ./frontend-build/
     tty: true
     command: ["serve", "./", "-l", "80"]
     environment:
@@ -31,5 +31,6 @@ services:
       - "80:80"
     depends_on:
       - mongo
+      - backend
     links:
       - backend
