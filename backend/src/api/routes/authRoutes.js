@@ -38,23 +38,18 @@ export default class AuthRouter {
    */
   @post("/register")
   async create(ctx) {
-    try {
-      const {username, password, email, permission} = ctx.request.body;
+    const {username, password, email, permission} = ctx.request.body;
 
-      const data = await this.authServices.create({
-        username,
-        password,
-        email,
-        permission
-      });
+    const data = await this.authServices.create({
+      username,
+      password,
+      email,
+      permission
+    });
 
-      ctx.body = {
-        success: true
-      };
-    } catch (error) {
-      this.logger.error(error);
-      throw error;
-    }
+    ctx.body = {
+      success: true
+    };
   }
   /**
    * @apiDescription

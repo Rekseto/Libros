@@ -81,9 +81,12 @@ class isAuthorizedMiddleware {
     try {
       const {User} = this.models;
       const {payload} = decodeToken(this.token);
-      return User.findOne({
+      const user = await User.findOne({
         _id: payload.id
       });
+
+      if (!user) throw new AuthWrongCredentialsError();
+      return user;
     } catch (error) {
       throw new AuthWrongCredentialsError();
     }

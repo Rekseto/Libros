@@ -17,5 +17,5 @@ defineError({instance: BookAlreadyExistsError}, "BookAlreadyExistsError");
 defineError({instance: AlreadyExistsError}, "AlreadyExistsError");
 defineError({instance: NotFound}, "NotFoundError");
 defineError({instance: InternalServerError}, "InternalServerError");
-
+defineError({instance: Error});
 export default errors;

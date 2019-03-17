@@ -26,8 +26,10 @@
     "mongoose": "^5.4.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "7.1.0",
+    "@babel/core": "7.1.0",
+    "@babel/register": "7.0.0",
+    "@babel/runtime": "7.0.0",
     "babel-eslint": "^7.2.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
@@ -41,7 +43,6 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
     "cross-env": "^5.1.1",
     "eslint": "^4.10.0",
     "eslint-config-google": "^0.9.1",
