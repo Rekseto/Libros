@@ -1,4 +1,4 @@
-import { call, put } from "redux-saga/effects";
+import {call, put} from "redux-saga/effects";
 /**
  * Returns generator which will call a request for given endpoint, then
  * based on result will dispatch proper action.
@@ -12,7 +12,7 @@ import { call, put } from "redux-saga/effects";
  *
  */
 export const createSagaApiCall = (endpoint, method, success, fail) => {
-  return function* (action) {
+  return function*(action) {
     try {
       const headers = action.headers;
       let body = {};
@@ -30,11 +30,13 @@ export const createSagaApiCall = (endpoint, method, success, fail) => {
         yield put(fail(json));
       }
     } catch (error) {
-      console.log(error)
-      yield put(fail({
-        userMessage: "Nieidentyfikowany błąd",
-        httpStatus: 500,
-      }));
+      yield put(
+        fail({
+          userMessage: "Nieidentyfikowany błąd",
+          errorCode: 101,
+          httpStatus: 500
+        })
+      );
     }
   };
 };

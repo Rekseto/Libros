@@ -15,6 +15,7 @@ class Profile extends React.Component {
     super();
 
     this.logout = this.logout.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   componentDidMount() {
@@ -31,14 +32,13 @@ class Profile extends React.Component {
 
   deleteItem(id) {
     const {token} = this.props;
-    const {username} = this.props.match.params;
+    const {username} = this.props.user;
 
     this.props.deleteLoanRequest({token, id, username});
   }
 
   render() {
     const {loans, user} = this.props;
-
     return (
       <React.Fragment>
         <Header />

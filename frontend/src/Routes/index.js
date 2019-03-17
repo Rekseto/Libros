@@ -4,6 +4,7 @@ import Applied from "./AppliedRoute";
 import UnauthenticatedRoute from "./UnauthenticatedRoute";
 import AuthenticatedRoute from "./AuthenticatedRoute";
 import Loadable from "../LoadableComponent";
+
 const NotFound = Loadable({
   loader: () => import("../components/NotFound")
 });
