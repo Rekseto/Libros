@@ -57,6 +57,12 @@ export default (database, logger) => {
       try {
         const loan = await Loan.findById(id);
         if (!loan) throw new NotFound();
+        const book = await Book.findOne({
+          _id: loan.volume
+        });
+
+        book.loaned--;
+        await book.save();
 
         await loan.delete();
       } catch (error) {
