@@ -23,8 +23,8 @@ function Loan({loan, deleteItem}) {
         {getRemainingDays(dateDiffrence(new Date(loan.term), new Date()))} dni
       </th>
       <th className="loanList__cell">
-        <button onClick={_delete}>
-          Usuń <img src="" alt="" />
+        <button onClick={_delete} className="loanList__deleteBtn">
+          Usuń <img src="/images/trash.svg" alt="" />
         </button>
       </th>
     </tr>
