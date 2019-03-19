@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@koa/cors": "^2.2.1",
+    "babel-register": "^6.26.0",
     "base64url": "3.0.0",
     "call-dir": "^1.2.1",
     "case": "^1.6.0",
