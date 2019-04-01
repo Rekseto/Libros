@@ -16,7 +16,7 @@ import Router from "koa-router";
 
 import errors from "./errors";
 import {initDatabase} from "./Database";
-import errorCatch from "./api/middlewares/errorCatch";
+
 async function initServer(dependencies, config) {
   if (!dependencies.logger) {
     dependencies.logger = console;
