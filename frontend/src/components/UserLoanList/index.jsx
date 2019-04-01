@@ -14,7 +14,7 @@ function Loan({loan, deleteItem}) {
   };
 
   return (
-    <tr>
+    <tr key={loan._id}>
       <th className="loanList__cell">{loan.title}</th>
       <th className="loanList__cell">{loan.author}</th>
       <th className="loanList__cell">{formatDate(loan.date)}</th>

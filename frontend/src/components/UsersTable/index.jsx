@@ -6,7 +6,7 @@ function User({user}) {
   if (user) {
     const linkTo = `/admin/user/${user.username}`;
     return (
-      <tr className="">
+      <tr className="" key={user.username}>
         <th className="usersTable__cell">{user.username}</th>
         <th className="usersTable__cell">{user.email}</th>
         <th className="usersTable__cell">{user.loanedBooks}</th>

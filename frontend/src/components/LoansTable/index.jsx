@@ -10,7 +10,7 @@ const getRemainingDays = val => {
 function Loan({loan}) {
   if (loan) {
     return (
-      <tr className="">
+      <tr className="" key={loan._id}>
         <th className="loansTable__cell">{loan.loaner.username}</th>
         <th className="loansTable__cell">{loan.volume.title}</th>
         <th className="loansTable__cell">
