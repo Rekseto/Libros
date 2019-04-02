@@ -29,8 +29,7 @@ export default (database, logger) => {
         const book = await Book.findOne({isbn});
 
         if (!book) throw new NotFound();
-        if (book.loaned + 1 >= book.stock) throw new NotEnoughError();
-
+        if (book.loaned +1 > book.stock) throw new NotEnoughError();
         const date = new Date();
         const term = addDays(date, days);
 
