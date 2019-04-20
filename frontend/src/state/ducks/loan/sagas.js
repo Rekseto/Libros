@@ -7,6 +7,7 @@ import {
   removeLoanFailed
 } from "./actions";
 import {loansRequest} from "../user/actions";
+import {toast} from "react-toastify";
 
 export default function* loanSaga() {
   yield takeLatest("LOAN_ADD_REQUEST", function*(action) {
@@ -23,6 +24,9 @@ export default function* loanSaga() {
       if (json.success) {
         yield put(addLoanReceive(json));
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(addLoanFailed(json));
       }
     } catch (error) {
@@ -49,6 +53,9 @@ export default function* loanSaga() {
         yield put(removeLoanReceive(json));
         yield put(loansRequest(action.payload.username));
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(removeLoanFailed(json));
       }
     } catch (error) {

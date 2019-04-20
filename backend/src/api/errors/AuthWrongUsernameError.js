@@ -1,7 +1,7 @@
 class AuthWrongUsernameError extends Error {
   errorCode = 104;
   httpStatus = 401;
-  userMessage = "Wrong username";
+  message = "Wrong username";
 }
 
 export default AuthWrongUsernameError;

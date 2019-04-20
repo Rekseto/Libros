@@ -6,6 +6,5 @@ export {default as searchStore} from "./search";
 export {default as bookStore} from "./book";
 export {default as loanStore} from "./loan";
 export {default as loansStore} from "./loans";
-export {default as errorStore} from "./error";
 export {default as categoriesStore} from "./categories";
 export {default as publishersStore} from "./publishers";

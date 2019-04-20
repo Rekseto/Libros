@@ -9,6 +9,7 @@ import {
   bookRemoveReceive
 } from "./actions";
 import {booksEndpoint} from "../endpoints";
+import {toast} from "react-toastify";
 
 export default function* bookSaga() {
   yield takeLatest("BOOK_FIND_REQUEST", function*(action) {
@@ -24,12 +25,18 @@ export default function* bookSaga() {
       if (json.success) {
         yield put(bookFindReceive(json.data));
       } else {
+        toast.error(json.error, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(bookFindFailed(json));
       }
     } catch (error) {
+      toast.error("Niezidentyfikowany błąd", {
+        position: toast.POSITION.TOP_RIGHT
+      });
       yield put(
         bookFindFailed({
-          userMessage: "Nieidentyfikowany błąd",
+          userMessage: "Niezidentyfikowany błąd",
           httpStatus: 500
         })
       );
@@ -50,9 +57,16 @@ export default function* bookSaga() {
       if (json.success) {
         yield put(bookCreateReceive());
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(bookCreateFailed(json));
       }
     } catch (error) {
+      toast.error("Niezidentyfikowany błąd", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+
       yield put(
         bookCreateFailed({
           userMessage: "Nieidentyfikowany błąd",
@@ -75,9 +89,16 @@ export default function* bookSaga() {
       if (json.success) {
         yield put(bookRemoveReceive());
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(bookRemoveFailed(json));
       }
     } catch (error) {
+      toast.error("Niezidentyfikowany błąd", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+
       yield put(
         bookRemoveFailed({
           userMessage: "Nieidentyfikowany błąd",
@@ -101,6 +122,9 @@ export default function* bookSaga() {
       if (json.success) {
         yield put(bookRemoveReceive());
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(bookRemoveFailed(json));
       }
     } catch (error) {

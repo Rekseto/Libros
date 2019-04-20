@@ -9,6 +9,7 @@ import {
   categoriesAddFailed
 } from "./actions";
 import {categoriesEndpoint} from "../endpoints";
+import {toast} from "react-toastify";
 
 export default function* categorySaga() {
   yield takeLatest("CATEGORIES_FETCH_REQUEST", function*(action) {
@@ -22,6 +23,9 @@ export default function* categorySaga() {
       if (json.success) {
         yield put(categoriesFetchReceive(json.data));
       } else {
+        toast.error(json.error, {
+          position: toast.POSITION.TOP_LEFT
+        });
         yield put(categoriesFetchFailed(json));
       }
     } catch (error) {
@@ -49,6 +53,9 @@ export default function* categorySaga() {
         yield put(categoriesAddReceive(json.data));
         yield put(categoriesFetchRequest());
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(categoriesAddFailed(json));
       }
     } catch (error) {
@@ -75,6 +82,9 @@ export default function* categorySaga() {
         yield put(categoriesRemoveReceive(json.data));
         yield put(categoriesFetchRequest());
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(categoriesRemoveFailed(json));
       }
     } catch (error) {

@@ -1,4 +1,6 @@
 import {takeLatest, put, call} from "redux-saga/effects";
+import {toast} from "react-toastify";
+
 import {createSagaApiCall} from "../../../helpers/reduxHelper";
 import {
   loginReceive,
@@ -13,6 +15,7 @@ import {
   verifyEndpoint,
   logoutEndpoint
 } from "../endpoints";
+
 const loginSagaCall = createSagaApiCall(
   loginEndpoint,
   "POST",
@@ -45,7 +48,11 @@ export default function* authSaga() {
       if (json.success) {
         yield put(logoutReceive());
       }
-    } catch (error) {}
+    } catch (error) {
+      toast.error("Niezidentyfikowany błąd", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
   });
 
   yield takeLatest("AUTH_LOGIN_RECEIVE", function*(action) {

@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 import Routes from "../../Routes";
 import {withRouter} from "react-router";
 import {authActions} from "../../state/ducks/auth";
-import Toast from "../../components/Toast";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 class App extends React.Component {
   componentDidMount() {
@@ -11,11 +12,12 @@ class App extends React.Component {
   }
 
   render() {
-    const {isLogged, user, error} = this.props;
+    const {isLogged, user} = this.props;
 
     return (
       <React.Fragment>
-        <Toast error={error} />
+        <ToastContainer />
+
         <Routes isLogged={isLogged} user={user} />
       </React.Fragment>
     );
@@ -24,8 +26,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   isLogged: state.authStore.isLogged,
-  user: state.authStore.user,
-  error: state.errorStore.error
+  user: state.authStore.user
 });
 
 const mapDispatchToProps = dispatch => ({
