@@ -4,12 +4,14 @@ services:
     restart: always
     image: mongo
     volumes:
-      - /data_storages/libros
+      - /libros-db-volume:/db
     ports:
       - "27017:27017"
   backend:
     build: ./backend/
     tty: true
+    volumes:
+     - /libros-log-volume:/librosLogs
     env_file:
       - ./backend/.env
     environment:
@@ -34,3 +36,6 @@ services:
       - backend
     links:
       - backend
+volumes:
+  libros-db-volume:
+  libros-log-volume:
