@@ -9,6 +9,7 @@ import {
   publishersRemoveFailed
 } from "./actions";
 import {publishersEndpoint} from "../endpoints";
+import {toast} from "react-toastify";
 
 export default function* publishersSaga() {
   yield takeLatest("PUBLISHERS_FETCH_REQUEST", function*(action) {
@@ -22,6 +23,9 @@ export default function* publishersSaga() {
       if (json.success) {
         yield put(publishersFetchReceive(json.data));
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
         yield put(publishersFetchFailed(json));
       }
     } catch (error) {
@@ -49,6 +53,9 @@ export default function* publishersSaga() {
         yield put(publishersAddReceive(json.data));
         yield put(publishersFetchRequest());
       } else {
+        toast.error(json.error, {
+          position: toast.POSITION.TOP_LEFT
+        });
         yield put(publishersAddFailed(json));
       }
     } catch (error) {

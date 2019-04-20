@@ -1,7 +1,7 @@
 class AuthWrongCredentialsError extends Error {
   errorCode = 103;
   httpStatus = 401;
-  userMessage = "Wrong credentials";
+  message = "Wrong credentials";
 }
 
 export default AuthWrongCredentialsError;

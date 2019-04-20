@@ -1,4 +1,6 @@
 import {call, put} from "redux-saga/effects";
+import {toast} from "react-toastify";
+
 /**
  * Returns generator which will call a request for given endpoint, then
  * based on result will dispatch proper action.
@@ -27,9 +29,17 @@ export const createSagaApiCall = (endpoint, method, success, fail) => {
       if (json.success) {
         yield put(success(json.data));
       } else {
+        toast.error(json.error.message, {
+          position: toast.POSITION.TOP_RIGHT
+        });
+
         yield put(fail(json));
       }
     } catch (error) {
+      toast.error("Niezidentyfikowany błąd", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+
       yield put(
         fail({
           userMessage: "Nieidentyfikowany błąd",

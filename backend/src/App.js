@@ -16,6 +16,7 @@ import Router from "koa-router";
 
 import errors from "./errors";
 import {initDatabase} from "./Database";
+import errorMiddleware from "./api/middlewares/errorMiddleware";
 
 async function initServer(dependencies, config) {
   if (!dependencies.logger) {
@@ -31,13 +32,7 @@ async function initServer(dependencies, config) {
   server.setEngine(new Koa());
   server.setRouter(new Router());
 
-  server.use(
-    errors({
-      httpCode: 500,
-      errorCode: 101,
-      message: "Internal Server Error"
-    })
-  );
+  server.use(errorMiddleware({logger: dependencies.logger}));
   for (const dependency in dependencies) {
     server[dependency] = dependencies[dependency];
   }
