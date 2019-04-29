@@ -9,9 +9,10 @@
  */
 export function paginateFunction(arr, page, perPage = 25) {
   if (arr.length < perPage) return arr;
+  console.log(page);
 
-  if (page == 0) return arr.slice(0, perPage);
-  if (page == 1) return arr.slice(perPage, perPage * 2);
-  const startIndex = page * perPage - perPage;
-  return arr.slice(startIndex, page * perPage);
+  if (page - 1 == 0) return arr.slice(0, perPage);
+  if (page - 1 == 1) return arr.slice(perPage, perPage * 2);
+  const startIndex = page - 1 * perPage - perPage;
+  return arr.slice(startIndex, page - 1 * perPage);
 }

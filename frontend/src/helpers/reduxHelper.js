@@ -29,17 +29,9 @@ export const createSagaApiCall = (endpoint, method, success, fail) => {
       if (json.success) {
         yield put(success(json.data));
       } else {
-        toast.error(json.error.message, {
-          position: toast.POSITION.TOP_RIGHT
-        });
-
-        yield put(fail(json));
+        yield put(fail(json.error));
       }
     } catch (error) {
-      toast.error("Niezidentyfikowany błąd", {
-        position: toast.POSITION.TOP_RIGHT
-      });
-
       yield put(
         fail({
           userMessage: "Nieidentyfikowany błąd",

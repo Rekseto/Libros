@@ -1,0 +1,19 @@
+export const BOOKS_SEARCH_REQUEST = "BooksModule/BOOKS_SEARCH_REQUEST";
+export const BOOKS_SEARCH_RECEIVE = "BooksModule/BOOKS_SEARCH_RECEIVE";
+export const BOOKS_SEARCH_FAILED = "BooksModule/BOOKS_SEARCH_FAILED";
+
+export const BOOK_FETCH_REQUEST = "BooksModule/BOOK_FETCH_REQUEST";
+export const BOOK_FETCH_RECEIVE = "BooksModule/BOOK_FETCH_RECEIVE";
+export const BOOK_FETCH_FAILED = "BooksModule/BOOK_FETCH_FAILED";
+
+export const BOOK_CREATE_REQUEST = "BooksModule/BOOK_CREATE_REQUEST";
+export const BOOK_CREATE_RECEIVE = "BooksModule/BOOK_CREATE_RECEIVE";
+export const BOOK_CREATE_FAILED = "BooksModule/BOOK_CREATE_FAILED";
+
+export const BOOK_REMOVE_REQUEST = "BooksModule/BOOK_REMOVE_REQUEST";
+export const BOOK_REMOVE_RECEIVE = "BooksModule/BOOK_REMOVE_RECEIVE";
+export const BOOK_REMOVE_FAILED = "BooksModule/BOOK_REMOVE_FAILED";
+
+export const BOOK_EDIT_REQUEST = "BooksModule/BOOK_EDIT_REQUEST";
+export const BOOK_EDIT_RECEIVE = "BooksModule/BOOK_EDIT_RECEIVE";
+export const BOOK_EDIT_FAILED = "BooksModule/BOOK_EDIT_FAILED";

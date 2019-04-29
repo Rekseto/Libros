@@ -1,0 +1,11 @@
+export const LOAN_REMOVE_REQUEST = "UserModule/LOAN_REMOVE_REQUEST";
+export const LOAN_REMOVE_RECEIVE = "UserModule/LOAN_REMOVE_RECEIVE";
+export const LOAN_REMOVE_FAILED = "UserModule/LOAN_REMOVE_FAILED";
+
+export const LOAN_ADD_REQUEST = "UserModule/LOAN_ADD_REQUEST";
+export const LOAN_ADD_RECEIVE = "UserModule/LOAN_ADD_RECEIVE";
+export const LOAN_ADD_FAILED = "UserModule/LOAN_ADD_FAILED";
+
+export const LOANS_FETCH_REQUEST = "UserModule/LOANS_FETCH_REQUEST";
+export const LOANS_FETCH_RECEIVE = "UserModule/LOANS_FETCH_RECEIVE";
+export const LOANS_FETCH_FAILED = "UserModule/LOANS_FETCH_FAILED";

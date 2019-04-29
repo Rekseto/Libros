@@ -1,0 +1,86 @@
+.header {
+  background: #2061bc;
+  display: flex;
+  min-height: 8vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  padding: 15px;
+}
+
+.header__heading {
+  font-size: 1.2em;
+}
+.header__headingLink {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.header__headingLink:hover {
+  color: white;
+}
+
+.header__headingLogo {
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.header__login {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.header__loginLink {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.header__loginLink img {
+  height: 40px;
+}
+
+.navigation {
+  margin-left: 40px;
+  width: 50%;
+}
+.navigation__list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.navigation__element {
+  margin: 5px;
+}
+.navigation__link {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  background: #3a86f1;
+  padding: 8px;
+  border-radius: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navigation__link img {
+  width: 24px;
+  height: 24px;
+}
+
+.navigation__link:hover {
+  color: #c0c6db;
+  text-decoration: none;
+}
+
+.navigation__link:focus {
+  color: #c0c6db;
+  text-decoration: none;
+}

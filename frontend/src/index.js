@@ -1,26 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import {createBrowserHistory} from "history";
 import {Provider} from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./container/App";
-import configureStore from "./state/store";
+import {HashRouter} from "react-router-dom";
+import {ConnectedRouter} from "connected-react-router";
 import registerServiceWorker from "./workers/ServiceWorker";
 
 import "./index.css";
-import {HashRouter} from "react-router-dom";
-import {i18nContext} from "./i18n/i18nContext";
-import i18n from "./i18n";
 
-const store = configureStore();
-const I18nProvider = i18nContext.Provider;
+import configureStore from "./store";
+import App from "./App";
+
+const history = createBrowserHistory();
+const store = configureStore(history);
 ReactDOM.render(
   <Provider store={store}>
-    <I18nProvider value={new i18n("PL")}>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </I18nProvider>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

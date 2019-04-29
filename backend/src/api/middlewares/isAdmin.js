@@ -27,7 +27,7 @@ class isAdmin {
    * @return {Promise}
    */
   async handle(ctx, next, requiredPermissions) {
-    if (ctx.state.user.permission == 1) {
+    if (ctx.state.user.permission == "admin") {
       return next();
     }
 
