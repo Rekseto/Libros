@@ -41,6 +41,9 @@ async function initServer(dependencies, config) {
   server.use(server.router.allowedMethods());
   try {
     const middlewares = await readdir(resolve(__dirname, "api/middlewares"));
+    await load(resolve(__dirname, "api/scripts"), fpath =>
+      require(fpath)(dependencies)
+    );
 
     for (const middleware of middlewares) {
       server.import(resolve(__dirname, "api/middlewares/", middleware));
