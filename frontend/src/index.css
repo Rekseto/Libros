@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
 html,
 body {
   height: 100%;
@@ -12,47 +11,27 @@ body {
   font-size: 18px;
 }
 
-.main {
-  min-height: 92vh;
+.inputGroup {
+  padding: 15px;
   display: flex;
-  padding: 35px;
-  background: #f9f9f9;
+  flex-direction: column;
 }
 
 .textInput {
-  width: 100%;
+  background: #ffffff;
   padding: 5px;
-  background: white !important;
+  border: 1px solid #2061bc;
+  border-radius: 2px;
 }
 
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  padding: 25px 0 25px 0;
-  align-items: center;
-}
+.submit {
+  background: #3584f4;
+  border: 1px solid #126ded;
+  border-radius: 3px;
 
-.submitButton {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap;
-
-  background: #991313;
-
-  padding: 0.375rem 0.75rem;
-  margin: 10px;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-
-  user-select: none;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
+  padding: 6px;
+  width: 80%;
   color: white;
-
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 @media (max-width: 1024px) {

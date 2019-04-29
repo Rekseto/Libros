@@ -1,0 +1,23 @@
+.BooksList {
+  border: 5px solid #2061bc;
+  border-radius: 4px;
+  border-spacing: 0;
+}
+
+.BooksList__thead {
+  background: #2061bc;
+  color: white;
+}
+.BooksList__headCell {
+  padding: 8px;
+}
+
+.BooksList__bodyCell {
+  background: white;
+  padding: 5px;
+}
+
+.BooksList__link {
+  color: #2061bc;
+  text-decoration: none;
+}

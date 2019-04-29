@@ -1,11 +1,12 @@
 import NotFound from "../errors/NotFoundError";
 import InternalServerError from "../errors/InternalServerError";
 import {searchQuery} from "../../utils/requestUtils";
-import BookAlreadyExistsError from "../errors/BookAlreadyExistsError";
+
 import AlreadyExistsError from "../errors/AlreadyExistsError";
+import BadRequestError from "../errors/BadRequestError";
 
 export default (database, logger) => {
-  const {Book, User, Loan} = database.models;
+  const {Book, User, Loan, Publisher, Category} = database.models;
 
   return {
     async fetchAll() {
@@ -23,6 +24,10 @@ export default (database, logger) => {
       try {
         const result = await Book.find({isbn});
         if (result.length) throw new AlreadyExistsError();
+        const publisherResult = await Publisher.findOne({_id: publisher});
+        const categoryResult = await Category.findOne({_id: category});
+        if (!categoryResult || !publisherResult) throw new BadRequestError();
+
         const book = await Book.create({
           loaned: 0,
           title,

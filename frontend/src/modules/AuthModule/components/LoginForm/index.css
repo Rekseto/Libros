@@ -1,0 +1,28 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LoginForm__inputGroup {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.LoginForm__textInput {
+  background: #ffffff;
+  padding: 5px;
+  border: 1px solid #2061bc;
+  border-radius: 2px;
+}
+
+.LoginForm__submit {
+  background: #3584f4;
+  border: 1px solid #126ded;
+  border-radius: 3px;
+
+  padding: 6px;
+  width: 80%;
+  color: white;
+}

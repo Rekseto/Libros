@@ -1,0 +1,26 @@
+export const CATEGORIES_FETCH_REQUEST =
+  "CategoriesModule/CATEGORIES_FETCH_REQUEST";
+
+export const CATEGORIES_FETCH_RECEIVE =
+  "CategoriesModule/CATEGORIES_FETCH_RECEIVE";
+
+export const CATEGORIES_FETCH_FAILED =
+  "CategoriesModule/CATEGORIES_FETCH_FAILED";
+
+// Create
+export const CATEGORY_CREATE_REQUEST =
+  "CategoriesModule/CATEGORY_CREATE_REQUEST";
+
+export const CATEGORY_CREATE_RECEIVE =
+  "CategoriesModule/CATEGORY_CREATE_RECEIVE";
+
+export const CATEGORY_CREATE_FAILED = "CategoriesModule/CATEGORY_CREATE_FAILED";
+
+// Remove
+export const CATEGORY_REMOVE_REQUEST =
+  "CategoriesModule/CATEGORY_REMOVE_REQUEST";
+
+export const CATEGORY_REMOVE_RECEIVE =
+  "CategoriesModule/CATEGORY_REMOVE_RECEIVE";
+
+export const CATEGORY_REMOVE_FAILED = "CategoriesModule/CATEGORY_REMOVE_FAILED";

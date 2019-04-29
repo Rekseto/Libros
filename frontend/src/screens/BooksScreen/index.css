@@ -1,0 +1,9 @@
+.BookScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+  background: url("/images/background-min.jpg");
+  background-size: cover;
+}

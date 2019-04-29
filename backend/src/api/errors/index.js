@@ -7,6 +7,7 @@ import BookAlreadyExistsError from "./BookAlreadyExistsError";
 import AuthWrongCredentialsError from "./AuthWrongCredentialsError";
 import AuthWrongPasswordError from "./AuthWrongPasswordError";
 import AuthWrongUsernameError from "./AuthWrongUsernameError";
+import BadRequestError from "./BadRequestError";
 
 export default [
   AlreadyExistsError,
@@ -17,5 +18,6 @@ export default [
   BookAlreadyExistsError,
   AuthWrongCredentialsError,
   AuthWrongPasswordError,
-  AuthWrongUsernameError
+  AuthWrongUsernameError,
+  BadRequestError
 ];

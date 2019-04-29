@@ -1,0 +1,42 @@
+.LoginScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 95vh;
+
+  background: url(/images/background.jpg);
+  background-size: 10%;
+}
+.LoginScreen__boxContainer {
+  width: 450px;
+  height: 350px;
+  padding: 15px;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+}
+.LoginScreen__heading {
+  text-align: center;
+}
+
+.LoginScreen__headerTitle {
+  text-align: center;
+}
+
+.LoginScreen__headerImage {
+  width: 64px;
+  height: 64px;
+}
+
+.LoginScreen__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LoginScreen__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

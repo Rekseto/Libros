@@ -13,8 +13,6 @@ import cors from "@koa/cors";
 import logger from "koa-logger";
 import Koa from "koa";
 import Router from "koa-router";
-
-import errors from "./errors";
 import {initDatabase} from "./Database";
 import errorMiddleware from "./api/middlewares/errorMiddleware";
 

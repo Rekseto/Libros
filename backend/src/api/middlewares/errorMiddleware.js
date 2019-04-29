@@ -10,19 +10,20 @@ function errorMiddleware({logger}) {
     try {
       await next();
     } catch (error) {
-      let locals = defaultError;
-
+      let body = {...defaultError};
       errors.forEach(instance => {
         if (error instanceof instance) {
-          locals = error;
+          body.message = error.message;
+          body.httpStatus = error.httpStatus;
+          body.errorCode = error.errorCode;
         }
       });
 
       logger.error(error.message);
-      ctx.status = locals.httpStatus;
+      ctx.status = body.httpStatus;
       ctx.body = {
         success: false,
-        error: locals
+        error: body
       };
     }
   };

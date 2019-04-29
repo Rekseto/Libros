@@ -31,7 +31,9 @@ export default class UserRouter {
    *         "data": {}
    *
    */
-  @get("/:username")
+  @get("/:username", function() {
+    return compose([this.isAuthorized(), this.isOwnerOrAdmin()]);
+  })
   async getLoaned(ctx) {
     const {username} = ctx.params;
     const data = await this.userService.getLoaned(username);
