@@ -1,9 +1,11 @@
 import NotFound from "../errors/NotFoundError";
 import InternalServerError from "../errors/InternalServerError";
 import AlreadyExistsError from "../errors/AlreadyExistsError";
+import bookServices from "./bookServices";
 
 export default (database, logger) => {
-  const {Category} = database.models;
+  const {Category, Book} = database.models;
+  const bookService = bookServices(database, logger);
 
   return {
     async fetchAll() {
@@ -32,9 +34,17 @@ export default (database, logger) => {
         throw new InternalServerError();
       }
     },
-    async delete(name) {
+    async delete(id) {
       try {
-        const category = await Category.findOne({name});
+        const category = await Category.findById(id);
+
+        const books = await Book.find({
+          category: id
+        });
+
+        for (const book of books) {
+          await bookService.delete(book.isbn);
+        }
 
         await category.remove();
 

@@ -97,12 +97,12 @@ export default class CategoryRouter {
    *         "data": {}
    *
    */
-  @del("/:name", function() {
+  @del("/:id", function() {
     return compose([this.isAuthorized(), this.isAdmin()]);
   })
   async delete(ctx) {
-    const {name} = ctx.params;
-    const data = await this.categoryService.delete(name);
+    const {id} = ctx.params;
+    const data = await this.categoryService.delete(id);
 
     ctx.body = {
       success: true,

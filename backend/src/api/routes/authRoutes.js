@@ -36,7 +36,9 @@ export default class AuthRouter {
    *         "success": true
    *     }
    */
-  @post("/register")
+  @post("/register", function() {
+    return compose([this.isAuthorized(), this.isAdmin()]);
+  })
   async create(ctx) {
     const {username, password, email, permission} = ctx.request.body;
 
