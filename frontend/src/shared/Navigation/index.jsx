@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import "./index.css";
-
 export default () => {
   return (
     <header className="header flex-column flex-lg-row justify-content-lg-start">
@@ -15,7 +14,7 @@ export default () => {
       <nav className="navigation d-flex justify-content-center justify-content-lg-start">
         <ul className="navigation__list">
           <li className="navigation__element">
-            <Link className="navigation__link" to="/search/0">
+            <Link className="navigation__link" to="/search/1">
               <img src="/images/search.svg" aria-hidden="true" alt="" />
               Wyszukiwarka
             </Link>
