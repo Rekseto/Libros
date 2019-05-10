@@ -23,6 +23,9 @@ body {
   border: 1px solid #2061bc;
   border-radius: 2px;
 }
+.label {
+  margin: 5px;
+}
 
 .submit {
   background: #3584f4;
@@ -30,14 +33,23 @@ body {
   border-radius: 3px;
 
   padding: 6px;
-  width: 80%;
+  width: fit-content;
   color: white;
 }
 
+.submit--danger {
+  background: #f43535;
+  border: 1px solid #f72a2a;
+}
+
+.main {
+  min-height: 95vh;
+  padding: 55px;
+  background: url(/images/background.jpg);
+  background-size: 10%;
+}
+
 @media (max-width: 1024px) {
-  .main {
-    padding: 15px;
-  }
 }
 
 @media (max-width: 768px) {
