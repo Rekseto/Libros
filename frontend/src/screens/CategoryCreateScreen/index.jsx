@@ -4,15 +4,15 @@ import {withRouter} from "react-router";
 import Navigation from "../../shared/Navigation";
 import {CategoryCreateContainer} from "../../modules/CategoriesModule";
 
-function BookScreen(props) {
+function CategoryCreateScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main className="Book">
+      <main className="main d-flex justify-content-center align-items-center">
         <CategoryCreateContainer />
       </main>
     </React.Fragment>
   );
 }
 
-export default withRouter(BookScreen);
+export default withRouter(CategoryCreateScreen);

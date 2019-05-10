@@ -8,7 +8,7 @@ function BookScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main className="BookCreateScreen">
+      <main className="main d-flex justify-content-center align-items-center ">
         <BookCreatePage />
       </main>
     </React.Fragment>

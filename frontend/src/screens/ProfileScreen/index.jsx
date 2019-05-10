@@ -10,7 +10,7 @@ function ProfileScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main className="ProfileScreen">
+      <main className="main d-flex justify-content-center align-items-center flex-wrap">
         <ProfileBar user={user} />
         <ProfileLoansList username={user.username} />
       </main>

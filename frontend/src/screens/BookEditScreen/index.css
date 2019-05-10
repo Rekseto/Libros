@@ -1,0 +1,6 @@
+.BookEditScreen {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

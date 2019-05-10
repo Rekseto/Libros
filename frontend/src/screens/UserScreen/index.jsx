@@ -11,7 +11,7 @@ function UserScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main>
+      <main className="main d-flex flex-column align-items-center justify-content-center">
         <UserContainer username={username} />
       </main>
     </React.Fragment>

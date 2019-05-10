@@ -18,6 +18,7 @@ import UserListScreen from "./screens/UserListScreen";
 import UserScreen from "./screens/UserScreen";
 import LoanListScreen from "./screens/LoanListScreen";
 import AddLoanScreen from "./screens/AddLoanScreen/index.jsx";
+import RegisterScreen from "./screens/RegisterScreen/index.jsx";
 
 export default props => {
   return (
@@ -81,6 +82,12 @@ export default props => {
       <AuthenticatedRoute
         path="/admin/addCategory"
         component={CategoryCreateScreen}
+        props={props}
+      />
+
+      <AuthenticatedRoute
+        path="/admin/register"
+        component={RegisterScreen}
         props={props}
       />
 

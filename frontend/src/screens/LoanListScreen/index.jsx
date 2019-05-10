@@ -10,7 +10,7 @@ function LoanListScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main className="">
+      <main className="main d-flex flex-column align-items-center justify-content-center">
         <LoanListContainer page={props.match.params.page} {...props} />
       </main>
     </React.Fragment>

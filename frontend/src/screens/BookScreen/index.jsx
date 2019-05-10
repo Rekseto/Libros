@@ -10,7 +10,7 @@ function BookScreen(props) {
   return (
     <React.Fragment>
       <Navigation />
-      <main className="Book">
+      <main className="main d-flex justify-content-center align-items-center">
         <Book />
       </main>
     </React.Fragment>
