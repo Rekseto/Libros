@@ -12,9 +12,9 @@ function Publisher(publisher, deletePublisher, token) {
   }
 
   return (
-    <li className="">
+    <li className="PublisherCreateContainer__element">
       <span className="">{publisher.name}</span>
-      <button onClick={remove} className="">
+      <button onClick={remove} className="PublisherCreateContainer__submit">
         Usuń
       </button>
     </li>
@@ -41,15 +41,15 @@ class PublisherCreateContainer extends Component {
   render() {
     const {publishers, deletePublisher, token} = this.props;
     return (
-      <React.Fragment>
-        <h2>Dodaj wydawnictwo</h2>
+      <div className="PublisherCreateContainer">
+        <h2 className="PublisherCreateContainer__heading">Dodaj wydawnictwo</h2>
         <PublisherCreateForm submit={this.submit} />
-        <ul className="">
+        <ul className="PublisherCreateContainer__list">
           {publishers.map(publisher =>
             Publisher(publisher, deletePublisher, token)
           )}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 }

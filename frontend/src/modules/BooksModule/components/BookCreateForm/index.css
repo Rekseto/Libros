@@ -1,0 +1,7 @@
+.BookCreateForm {
+  width: 350px;
+  background: white;
+  height: fit-content;
+  padding: 5px;
+  box-shadow: 3px 3px 5px -4px rgba(0, 0, 0, 0.75);
+}

@@ -43,24 +43,29 @@ class BookPage extends Component {
       },
       bookData
     );
-    if (book.fastestTerm === "Teraz") fastestTerm = "Teraz";
+    if (book.fastestTerm === "Teraz" || book.stock > book.loaned)
+      fastestTerm = "Teraz";
     else fastestTerm = formatDate(book.fastestTerm);
     return (
       <React.Fragment>
-        <section>
-          <header className="">
-            <h2 className="">{book.title}</h2>
-            <p className="">{book.author}</p>
+        <section className="Book">
+          <header className="Book__header">
+            <h2 className="BookHeader__heading">{book.title}</h2>
+            <p className="BookHeader__author">{book.author}</p>
           </header>
 
-          <div className="">
-            <p>Data Wydania: {formatDate(book.date)}</p>
-            <p>ISBN: {book.isbn}</p>
-            <p>Wydawnictwo: {book.publisher.name}</p>
-            <p>Kategoria: {book.category.name}</p>
-            <p>W bibliotece: {book.stock}</p>
-            <p>Wypożyczone: {book.loaned}</p>
-            <p>Dostępna od: {fastestTerm}</p>
+          <div className="Book__container">
+            <p className="Book__paragraph">
+              Data Wydania: {formatDate(book.date)}
+            </p>
+            <p className="Book__paragraph">ISBN: {book.isbn}</p>
+            <p className="Book__paragraph">
+              Wydawnictwo: {book.publisher.name}
+            </p>
+            <p className="Book__paragraph">Kategoria: {book.category.name}</p>
+            <p className="Book__paragraph">W bibliotece: {book.stock}</p>
+            <p className="Book__paragraph">Wypożyczone: {book.loaned}</p>
+            <p className="Book__paragraph">Dostępna od: {fastestTerm}</p>
           </div>
 
           <BookAdminPanel deleteBook={this.deleteBook} />

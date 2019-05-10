@@ -7,14 +7,16 @@ const initialState = {
   books: [],
   book: {},
   pages: 0,
-  error: null
+  error: null,
+  page: 0
 };
 
 const actionHandlers = {
   [actionTypes.BOOKS_SEARCH_REQUEST]: (state, action) => {
     return R.evolve(R.__, state)({
       isFetching: R.T,
-      error: R.always(null)
+      error: R.always(null),
+      page: R.always(action.payload.page)
     });
   },
 

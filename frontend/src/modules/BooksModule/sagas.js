@@ -1,5 +1,4 @@
 import {takeLatest, call, put} from "redux-saga/effects";
-import {toast} from "react-toastify";
 import {push} from "connected-react-router";
 
 import * as actions from "./actions";
@@ -24,9 +23,6 @@ export default function* booksSaga() {
         yield put(actions.booksFetchFailed(json.error));
       }
     } catch (error) {
-      toast.error("Niezidentyfikowany błąd", {
-        position: toast.POSITION.TOP_LEFT
-      });
       yield put(
         actions.booksFetchFailed({
           userMessage: "Niezidentyfikowany błąd",

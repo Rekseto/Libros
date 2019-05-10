@@ -1,0 +1,31 @@
+.PublisherCreateContainer {
+  background: white;
+  height: fit-content;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.75);
+}
+.PublisherCreateContainer__heading {
+  text-align: center;
+}
+
+.PublisherCreateContainer__list {
+  list-style-type: none;
+}
+
+.PublisherCreateContainer__element {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.PublisherCreateContainer__submit {
+  background: #f43b35;
+  border: 1px solid #f02e28;
+  border-radius: 3px;
+
+  padding: 6px;
+  margin: 5px;
+  color: white;
+}

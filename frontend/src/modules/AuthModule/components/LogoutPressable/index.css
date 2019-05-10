@@ -1,0 +1,11 @@
+.LogoutPressable {
+  color: white;
+  text-decoration: none;
+  background: #2061bc;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 6px;
+  width: 100%;
+  text-align: center;
+  border: 0;
+}

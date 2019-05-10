@@ -14,11 +14,16 @@ class CategoryCreateForm extends Component {
   render() {
     const {state, onChange} = this;
     return (
-      <form className="" onSubmit={e => this.props.submit(e, state)}>
-        <div className="">
-          <label htmlFor="name">Kategoria</label>
+      <form
+        className="CategoryCreateForm"
+        onSubmit={e => this.props.submit(e, state)}
+      >
+        <div className="inputGroup d-flex flex-row">
+          <label htmlFor="name" className="label">
+            Kategoria
+          </label>
           <input
-            className=""
+            className="textInput"
             type="text"
             id="name"
             name="name"
@@ -27,7 +32,7 @@ class CategoryCreateForm extends Component {
             required
           />
         </div>
-        <button>Dodaj</button>
+        <button className="submit">Dodaj</button>
       </form>
     );
   }

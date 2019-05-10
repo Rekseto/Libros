@@ -9,10 +9,6 @@ import {actions as publishersActions} from "../../../PublishersModule";
 import {actions as booksActions} from "../../../BooksModule";
 
 class BooksSearchBar extends Component {
-  constructor() {
-    super();
-  }
-
   state = {
     title: "",
     isbn: "",
@@ -79,8 +75,8 @@ class BooksSearchBar extends Component {
   }
   render() {
     return (
-      <form className="" onSubmit={this.submit}>
-        <div className="searchPage__inputGroup">
+      <form className="BooksSearchbar" onSubmit={this.submit}>
+        <div className="inputGroup">
           <label className="searchPage__label" htmlFor="author">
             Autor
           </label>
@@ -94,7 +90,7 @@ class BooksSearchBar extends Component {
           />
         </div>
 
-        <div className="searchPage__inputGroup">
+        <div className="inputGroup">
           <label className="searchPage__label" htmlFor="isbn">
             ISBN
           </label>
@@ -108,7 +104,7 @@ class BooksSearchBar extends Component {
           />
         </div>
 
-        <div className="searchPage__inputGroup">
+        <div className="inputGroup">
           <label className="searchPage__label" htmlFor="title">
             Tytuł
           </label>
@@ -122,7 +118,7 @@ class BooksSearchBar extends Component {
           />
         </div>
 
-        <div className="searchPage__inputGroup">
+        <div className="inputGroup">
           <label className="searchPage__label" htmlFor="category">
             Kategorie
           </label>
@@ -143,7 +139,7 @@ class BooksSearchBar extends Component {
           </select>
         </div>
 
-        <div className="searchPage__inputGroup">
+        <div className="inputGroup">
           <label className="searchPage__label" htmlFor="publisher">
             Wydawnictwo
           </label>
@@ -164,7 +160,7 @@ class BooksSearchBar extends Component {
           </select>
         </div>
 
-        <button className="searchPage__submit" type="submit">
+        <button className="submit" type="submit">
           Wyszukaj
         </button>
       </form>

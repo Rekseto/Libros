@@ -74,6 +74,7 @@ class BooksList extends React.Component {
           ns="search"
           pages={this.props.pages}
           searchQuery={this.props.location.search}
+          page={this.props.page}
         />
       </React.Fragment>
     );
@@ -87,7 +88,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     books: state.booksStore.books,
-    pages: state.booksStore.pages
+    pages: state.booksStore.pages,
+    page: state.booksStore.page
   };
 };
 

@@ -17,16 +17,12 @@ export default function* categorySaga() {
       if (json.success) {
         yield put(actions.categoriesFetchReceive(json));
       } else {
-        toast.error(json.error.message, {
-          position: toast.POSITION.TOP_LEFT
-        });
-
         yield put(actions.categoriesFetchFailed(json.error));
       }
     } catch (error) {
       yield put(
         actions.categoriesFetchFailed({
-          userMessage: "Niezidentyfikowany błąd"
+          message: "Niezidentyfikowany błąd"
         })
       );
     }
@@ -52,7 +48,7 @@ export default function* categorySaga() {
     } catch (error) {
       yield put(
         actions.categoryCreateFailed({
-          userMessage: "Niezidentyfikowany błąd",
+          message: "Niezidentyfikowany błąd",
           httpStatus: 500
         })
       );
@@ -64,7 +60,7 @@ export default function* categorySaga() {
       const headers = action.headers;
       const data = yield call(
         fetch,
-        apiCalls.categorys.remove(action.payload.id),
+        apiCalls.categories.remove(action.payload.id),
         {
           method: "DELETE",
           body: JSON.stringify(action.payload),
@@ -83,7 +79,7 @@ export default function* categorySaga() {
     } catch (error) {
       yield put(
         actions.categoryRemoveFailed({
-          userMessage: "Niezidentyfikowany błąd",
+          message: "Niezidentyfikowany błąd",
           httpStatus: 500
         })
       );

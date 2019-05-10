@@ -1,5 +1,4 @@
 import {takeLatest, put, call} from "redux-saga/effects";
-import {toast} from "react-toastify";
 
 import * as actionTypes from "./actionTypes";
 import apiCalls from "./apiCalls";

@@ -1,0 +1,22 @@
+.Book {
+  background: white;
+  height: fit-content;
+  padding: 45px;
+  box-shadow: 1px 1px 6px -2px rgba(0, 0, 0, 0.75);
+}
+
+.Book__header {
+  margin: 35px;
+}
+
+.BookHeader__heading {
+  text-align: center;
+}
+
+.BookHeader__author {
+  text-align: center;
+}
+
+.Book__paragraph {
+  margin: 15px;
+}

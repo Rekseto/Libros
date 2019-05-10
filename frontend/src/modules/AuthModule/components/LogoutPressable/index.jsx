@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import {connect} from "react-redux";
 
 import {authLogoutRequest} from "../../actions";
+import "./index.css";
 
 export const LogoutPressable = props => {
   const clickHandler = e => {
@@ -9,7 +10,7 @@ export const LogoutPressable = props => {
   };
 
   return (
-    <button onClick={clickHandler} className="AuthModule__logoutPressable">
+    <button onClick={clickHandler} className="LogoutPressable">
       Wyloguj
     </button>
   );

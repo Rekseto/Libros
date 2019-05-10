@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import "./index.css";
+
 const Select = excludeName => element => {
   if (element.name !== excludeName) {
     return (
@@ -36,11 +38,16 @@ class BookEditComponent extends Component {
     const {state, onChange} = this;
     const {book} = this.props;
     return (
-      <form className="" onSubmit={e => this.props.submit(e, state)}>
-        <div className=" ">
-          <label forHtml="isbn">ISBN</label>
+      <form
+        className="BookEditForm"
+        onSubmit={e => this.props.submit(e, state)}
+      >
+        <div className="inputGroup">
+          <label forHtml="isbn" className="label">
+            ISBN
+          </label>
           <input
-            className=" "
+            className="textInput"
             id="isbn"
             name="isbn"
             type="number"
@@ -51,10 +58,12 @@ class BookEditComponent extends Component {
           />
         </div>
 
-        <div className=" ">
-          <label forHtml="title">Tytuł</label>
+        <div className="inputGroup">
+          <label forHtml="title" className="label">
+            Tytuł
+          </label>
           <input
-            className=" "
+            className="textInput"
             id="title"
             name="title"
             type="text"
@@ -64,10 +73,12 @@ class BookEditComponent extends Component {
           />
         </div>
 
-        <div className=" ">
-          <label forHtml="author">Autor</label>
+        <div className="inputGroup">
+          <label forHtml="author" className="label">
+            Autor
+          </label>
           <input
-            className=" "
+            className="textInput"
             id="author"
             name="author"
             type="text"
@@ -77,10 +88,12 @@ class BookEditComponent extends Component {
           />
         </div>
 
-        <div className=" ">
-          <label forHtml="stock">Egzemplarzy</label>
+        <div className="inputGroup">
+          <label forHtml="stock" className="label">
+            Egzemplarzy
+          </label>
           <input
-            className=" "
+            className="textInput"
             id="stock"
             name="stock"
             type="number"
@@ -91,10 +104,10 @@ class BookEditComponent extends Component {
           />
         </div>
 
-        <div className=" ">
+        <div className="inputGroup">
           <label forHtml="date">Rok</label>
           <input
-            className=" "
+            className="textInput"
             id="date"
             type="date"
             name="date"
@@ -104,8 +117,8 @@ class BookEditComponent extends Component {
           />
         </div>
 
-        <div className=" ">
-          <label className="" htmlFor="publisher">
+        <div className="inputGroup">
+          <label className="label" htmlFor="publisher">
             Wydawnictwo
           </label>
           <select
@@ -119,7 +132,7 @@ class BookEditComponent extends Component {
           </select>
         </div>
 
-        <div className="">
+        <div className="inputGroup">
           <label htmlFor="category">Kategorie</label>
           <select
             name="category"
@@ -132,7 +145,9 @@ class BookEditComponent extends Component {
           </select>
         </div>
 
-        <button className="">Edytuj książke</button>
+        <div className="inputGroup">
+          <button className="submit">Edytuj książke</button>
+        </div>
       </form>
     );
   }

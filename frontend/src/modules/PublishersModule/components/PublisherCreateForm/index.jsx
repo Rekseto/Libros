@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 
+import "./index.css";
+
 class PublisherCreateForm extends Component {
   onChange = e => {
     this.setState({
@@ -14,11 +16,16 @@ class PublisherCreateForm extends Component {
   render() {
     const {state, onChange} = this;
     return (
-      <form className="" onSubmit={e => this.props.submit(e, state)}>
-        <div className="">
-          <label htmlFor="name">Wydawnictwo</label>
+      <form
+        className="PublisherCreateForm"
+        onSubmit={e => this.props.submit(e, state)}
+      >
+        <div className="inputGroup d-flex flex-row">
+          <label htmlFor="name" className="label">
+            Wydawnictwo
+          </label>
           <input
-            className=""
+            className="textInput"
             type="text"
             id="name"
             name="name"
@@ -27,7 +34,7 @@ class PublisherCreateForm extends Component {
             required
           />
         </div>
-        <button>Dodaj</button>
+        <button className="submit">Dodaj</button>
       </form>
     );
   }

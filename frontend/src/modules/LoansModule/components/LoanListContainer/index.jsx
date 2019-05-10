@@ -10,8 +10,14 @@ class LoanListContainer extends Component {
     this.props.fetchLoans({page, token});
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.page !== this.props.page) {
+      const {page, token} = this.props;
+      this.props.fetchLoans({page, token});
+    }
+  }
+
   render() {
-    console.log(this.props.loans);
     return (
       <React.Fragment>
         <LoanListComponent loans={this.props.loans} />
@@ -19,6 +25,7 @@ class LoanListContainer extends Component {
           ns="search"
           pages={this.props.pages}
           searchQuery={this.props.location.search}
+          page={this.props.paginationPage}
         />
       </React.Fragment>
     );
@@ -36,7 +43,8 @@ const mapStateToProps = state => {
   return {
     token: state.authStore.token,
     loans: state.loansStore.loans,
-    pages: state.loansStore.pages
+    pages: state.loansStore.pages,
+    paginationPage: state.loansStore.page
   };
 };
 

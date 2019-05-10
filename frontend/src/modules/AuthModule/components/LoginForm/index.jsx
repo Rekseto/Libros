@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 import "./index.css";
 class LoginForm extends Component {
-  constructor() {
-    super();
-  }
-
   onChangePassword = e => {
     this.setState({
       password: e.target.value

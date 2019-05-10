@@ -6,9 +6,11 @@ import {LogoutPressable, renderIfAdmin} from "../../../AuthModule/";
 
 export default ({user}) => {
   return (
-    <React.Fragment>
-      <h1>{user.username}</h1>
-      <LogoutPressable />
+    <header className="ProfileBar">
+      <div className="d-flex">
+        <h2 className="ProfileBar__heading">{user.username}</h2>
+        <LogoutPressable />
+      </div>
       {user.permission === "admin" ? (
         <ul className="ProfileBar__list">
           <li className="ProfileBar__element">
@@ -38,6 +40,6 @@ export default ({user}) => {
           </li>
         </ul>
       ) : null}
-    </React.Fragment>
+    </header>
   );
 };

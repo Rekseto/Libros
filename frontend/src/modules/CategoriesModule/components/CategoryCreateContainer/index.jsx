@@ -12,9 +12,9 @@ function Category(category, deleteCategory, token) {
   }
 
   return (
-    <li className="">
+    <li className="CategoryCreateContainer__element">
       <span className="">{category.name}</span>
-      <button onClick={remove} className="">
+      <button onClick={remove} className="CategoryCreateContainer__submit">
         Usuń
       </button>
     </li>
@@ -41,15 +41,15 @@ class CategoryCreateContainer extends Component {
   render() {
     const {categories, deleteCategory, token} = this.props;
     return (
-      <React.Fragment>
-        <h2>Dodaj kategorie</h2>
+      <div className="CategoryCreateContainer">
+        <h2 className="CategoryCreateContainer__heading">Dodaj kategorie</h2>
         <CategoryCreateForm submit={this.submit} />
-        <ul className="">
+        <ul className="CategoryCreateContainer__list">
           {categories.map(category =>
             Category(category, deleteCategory, token)
           )}
         </ul>
-      </React.Fragment>
+      </div>
     );
   }
 }

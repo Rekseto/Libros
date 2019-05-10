@@ -15,16 +15,22 @@ const Loan = deleteItem => loan => {
 
   return (
     <tr key={loan._id}>
-      <th className="">{loan.title}</th>
-      <th className="">{loan.author}</th>
-      <th className="">{formatDate(loan.date)}</th>
-      <th className="">{formatDate(loan.term)}</th>
-      <th className="">
+      <th className="UserComponent__bodyCell">{loan.title}</th>
+      <th className="UserComponent__bodyCell">{loan.author}</th>
+      <th className="UserComponent__bodyCell">{formatDate(loan.date)}</th>
+      <th className="UserComponent__bodyCell">{formatDate(loan.term)}</th>
+      <th className="UserComponent__bodyCell">
         {getRemainingDays(dateDiffrence(new Date(loan.term), new Date()))} dni
       </th>
-      <th className="">
-        <button onClick={_delete} className="">
-          Usuń <img src="/images/trash.svg" alt="" />
+      <th className="UserComponent__bodyCell">
+        <button onClick={_delete} className="submit submit--danger ">
+          Usuń{" "}
+          <img
+            src="/images/trash.svg"
+            alt=""
+            aria-hidden="true"
+            className="UserComponent__trash"
+          />
         </button>
       </th>
     </tr>
@@ -33,21 +39,19 @@ const Loan = deleteItem => loan => {
 
 function UserComponent({loans, deleteItem}) {
   return (
-    <React.Fragment>
-      <table className="">
-        <thead>
-          <tr>
-            <th className="">Title</th>
-            <th className="">Autor</th>
-            <th className="">Data wypożyczenia</th>
-            <th className="">Data oddania</th>
-            <th className="">Pozostało</th>
-            <th className="" />
-          </tr>
-        </thead>
-        <tbody>{loans.map(Loan(deleteItem))}</tbody>
-      </table>
-    </React.Fragment>
+    <table className="UserComponent">
+      <thead className="UserComponent__thead">
+        <tr>
+          <th className="UserComponent__headCell">Title</th>
+          <th className="UserComponent__headCell">Autor</th>
+          <th className="UserComponent__headCell">Data wypożyczenia</th>
+          <th className="UserComponent__headCell">Data oddania</th>
+          <th className="UserComponent__headCell">Pozostało</th>
+          <th className="UserComponent__headCell" />
+        </tr>
+      </thead>
+      <tbody>{loans.map(Loan(deleteItem))}</tbody>
+    </table>
   );
 }
 

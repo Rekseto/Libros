@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {createBrowserHistory} from "history";
 import {Provider} from "react-redux";
-import {HashRouter} from "react-router-dom";
 import {ConnectedRouter} from "connected-react-router";
 import registerServiceWorker from "./workers/ServiceWorker";
 
