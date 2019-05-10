@@ -1,0 +1,15 @@
+.UsernameSearch {
+  padding: 5px;
+  margin: 15px;
+  width: fit-content;
+
+  background: white;
+  border: 5px solid #2061bc;
+}
+
+.UsernameSearch__form {
+  display: flex;
+}
+.UsernameSearch__form * {
+  margin: 5px;
+}
