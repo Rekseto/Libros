@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
 
 import {actions as authActions} from "./modules/AuthModule";
 import Routes from "./Routes";
