@@ -9,6 +9,9 @@ export default {
     },
     fetchUsers(page, searchObject) {
       return `${URL}/users/${page}?${queryString.stringify(searchObject)}`;
+    },
+    register() {
+      return `${URL}/auth/register`;
     }
   }
 };

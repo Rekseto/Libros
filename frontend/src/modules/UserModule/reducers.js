@@ -14,7 +14,8 @@ const initialState = {
   loans: [],
   users: [],
   error: null,
-  pages: 0
+  pages: 0,
+  page: 1
 };
 
 const actionHandlers = {
@@ -42,7 +43,8 @@ const actionHandlers = {
   [USERS_FETCH_REQUEST]: (state, action) => {
     return R.evolve(R.__, state)({
       isFetching: R.T,
-      error: R.always(null)
+      error: R.always(null),
+      page: R.always(action.payload.page)
     });
   },
 

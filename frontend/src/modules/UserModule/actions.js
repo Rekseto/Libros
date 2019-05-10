@@ -47,3 +47,33 @@ export const fetchUsersFailed = error => ({
   type: actionTypes.USERS_FETCH_FAILED,
   error
 });
+// Register User
+export const registerUserRequest = ({
+  token,
+  username,
+  password,
+  permission,
+  email
+}) => ({
+  type: actionTypes.USER_REGISTER_REQUEST,
+  payload: {
+    username,
+    password,
+    permission,
+    email
+  },
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    Authorization: token
+  }
+});
+
+export const registerUsersReceive = json => ({
+  type: actionTypes.USER_REGISTER_RECEIVE,
+  payload: {}
+});
+
+export const registerUsersFailed = error => ({
+  type: actionTypes.USER_REGISTER_FAILED,
+  error
+});

@@ -62,4 +62,31 @@ export default function* userSagas() {
       );
     }
   });
+
+  yield takeLatest(actionTypes.USER_REGISTER_REQUEST, function*(action) {
+    try {
+      const headers = action.headers;
+      const data = yield call(fetch, apiCalls.users.register(), {
+        method: "POST",
+        body: JSON.stringify(action.payload),
+        headers
+      });
+
+      const json = yield data.json();
+
+      if (json.success) {
+        yield put(actions.registerUsersReceive(json));
+        yield put(push("/"));
+      } else {
+        yield put(actions.registerUsersFailed(json.error));
+      }
+    } catch (error) {
+      yield put(
+        actions.registerUsersFailed({
+          message: "Niezidentyfikowany błąd",
+          httpStatus: 500
+        })
+      );
+    }
+  });
 }

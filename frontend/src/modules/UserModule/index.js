@@ -13,3 +13,4 @@ export {default as userSaga} from "./sagas";
 
 export {default as UserListContainer} from "./components/UserListContainer";
 export {default as UserContainer} from "./components/UserContainer";
+export {default as RegisterContainer} from "./components/RegisterContainer";
