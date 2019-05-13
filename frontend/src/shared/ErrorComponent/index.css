@@ -1,0 +1,19 @@
+.ErrorComponent {
+  background: white;
+  height: 60vh;
+  width: 60%;
+  padding: 65px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.75);
+}
+.ErrorComponent__heading {
+  text-align: center;
+  margin: 15px;
+}
+.ErrorComponent__paragraph {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.ErrorComponent__link {
+  color: black;
+}

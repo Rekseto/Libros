@@ -19,6 +19,7 @@ import UserScreen from "./screens/UserScreen";
 import LoanListScreen from "./screens/LoanListScreen";
 import AddLoanScreen from "./screens/AddLoanScreen/index.jsx";
 import RegisterScreen from "./screens/RegisterScreen/index.jsx";
+import ErrorScreen from "./screens/ErrorScreen/index.jsx";
 
 export default props => {
   return (
@@ -93,6 +94,7 @@ export default props => {
 
       <AppliedRoute path="/search/:page" component={BooksScreen} />
       <AppliedRoute path="/book/:isbn" component={BookScreen} />
+      <AppliedRoute path="/error" component={ErrorScreen} />
       <Route component={NotFound} />
     </Switch>
   );
