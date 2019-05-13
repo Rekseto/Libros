@@ -32,7 +32,7 @@ export const createSagaApiCall = (endpoint, method, success, fail) => {
     } catch (error) {
       yield put(
         fail({
-          userMessage: "Niezidentyfikowany błąd",
+          message: "Niezidentyfikowany błąd",
           errorCode: 101,
           httpStatus: 500
         })
