@@ -25,7 +25,7 @@ export default function* booksSaga() {
     } catch (error) {
       yield put(
         actions.booksFetchFailed({
-          userMessage: "Niezidentyfikowany błąd",
+          message: "Niezidentyfikowany błąd",
           httpStatus: 500
         })
       );

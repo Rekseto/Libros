@@ -12,6 +12,6 @@ export {default as booksSaga} from "./sagas";
 
 export {default as BooksSearchbar} from "./components/BooksSearchbar";
 export {default as BooksList} from "./components/BooksList";
-export {default as Book} from "./components/Book";
+export {default as Book} from "./components/BookContainer";
 export {default as BookCreatePage} from "./components/BookCreatePage";
 export {default as BookEditContainer} from "./components/BookEditContainer";
