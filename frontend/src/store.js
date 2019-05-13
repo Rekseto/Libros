@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, combineReducers, compose} from "redux";
-import {all, takeEvery} from "redux-saga/effects";
+import {all, takeEvery, put} from "redux-saga/effects";
 import {toast} from "react-toastify";
-import {connectRouter} from "connected-react-router";
+import {connectRouter, push} from "connected-react-router";
 import {routerMiddleware} from "connected-react-router";
 import {createLogger} from "redux-logger";
 import createSagaMiddleware from "redux-saga";
@@ -20,6 +20,10 @@ function* rootSaga() {
     yield toast.error(action.error.message, {
       position: toast.POSITION.TOP_RIGHT
     });
+
+    if (action.payload && action.payload.redirect) {
+      yield put(push(action.payload.redirect));
+    }
   });
   yield all([
     booksSaga(),
