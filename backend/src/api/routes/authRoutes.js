@@ -149,7 +149,7 @@ export default class AuthRouter {
   async verify(ctx) {
     ctx.body = {
       success: true,
-      data: ctx.state.user
+      userData: ctx.state.user
     };
   }
 }

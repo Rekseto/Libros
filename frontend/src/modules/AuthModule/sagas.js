@@ -76,7 +76,7 @@ export default function* authSaga() {
           yield put(
             authLoginReceive({
               token,
-              userData
+              userData: json.userData
             })
           );
         } else {
