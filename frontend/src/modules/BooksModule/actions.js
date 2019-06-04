@@ -56,7 +56,10 @@ export const bookFetchReceive = json => ({
 
 export const bookFetchFailed = error => ({
   type: actionTypes.BOOK_FETCH_FAILED,
-  error
+  error,
+  payload: {
+    redirect: "/"
+  }
 });
 
 // Actions to create a book

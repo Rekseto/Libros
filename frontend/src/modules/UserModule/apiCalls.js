@@ -1,6 +1,6 @@
 import queryString from "querystring";
 
-const URL = "http://192.168.1.16:3000";
+const URL = "http://192.168.1.253:3000";
 
 export default {
   users: {
